@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find cross-app shortcut conflicts and generate a minimum-change repair plan locally."
+    />
+    <meta name="theme-color" content="#11100e" />
+    <title>Keybind Doctor</title>
+    <script>
+      try {
+        const saved = localStorage.getItem('keybind-doctor-theme');
+        const theme =
+          saved ||
+          (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/web/main.tsx"></script>
+  </body>
+</html>

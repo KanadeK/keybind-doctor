@@ -1,0 +1,100 @@
+{
+  "name": "keybind-doctor",
+  "version": "0.1.0",
+  "description": "Cross-application keybinding conflict analysis and minimum-change repair planning.",
+  "type": "module",
+  "bin": {
+    "keybind-doctor": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && npm run build:lib && npm run build:web",
+    "build:lib": "tsup src/index.ts src/cli.ts --format esm --dts --sourcemap --out-dir dist",
+    "build:web": "vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "verify:examples": "npm run build:lib && node scripts/verify-examples.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build",
+    "package": "npm run build && node scripts/package-release.mjs",
+    "package:smoke": "node scripts/smoke-package.mjs",
+    "release:check": "node scripts/release-check.mjs"
+  },
+  "keywords": [
+    "keyboard-shortcuts",
+    "keybindings",
+    "hotkeys",
+    "developer-tools",
+    "productivity",
+    "vscode",
+    "zed",
+    "jetbrains",
+    "powertoys",
+    "autohotkey"
+  ],
+  "author": "KanadeK",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KanadeK/keybind-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KanadeK/keybind-doctor/issues"
+  },
+  "homepage": "https://kanadek.github.io/keybind-doctor/",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "fast-xml-parser": "^5.3.8",
+    "jsonc-parser": "^3.3.1",
+    "picocolors": "^1.1.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@eslint/js": "^9.39.2",
+    "@fontsource-variable/geist": "^5.2.6",
+    "@playwright/test": "^1.58.2",
+    "@phosphor-icons/react": "^2.1.10",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^24.10.13",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "fflate": "^0.8.2",
+    "globals": "^17.3.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.1.18",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "esbuild": "0.28.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "remapKeys": {
+    "inProcess": []
+  },
+  "remapShortcuts": {
+    "global": [
+      {
+        "originalKeys": "162;164;84",
+        "newRemapKeys": "162;164;89",
+        "operationType": 0
+      },
+      {
+        "originalKeys": "91;160;83",
+        "newRemapKeys": "162;160;83",
+        "operationType": 0
+      }
+    ],
+    "appSpecific": [
+      {
+        "originalKeys": "162;160;76",
+        "newRemapKeys": "162;160;75",
+        "targetApp": "code.exe",
+        "operationType": 0
+      }
+    ]
+  }
+}

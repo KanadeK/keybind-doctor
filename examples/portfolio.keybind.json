@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "application": "Demo Recorder",
+  "bindings": [
+    {
+      "key": "ctrl+shift+p",
+      "command": "recording.pause",
+      "scope": "application",
+      "locked": false
+    },
+    {
+      "key": "ctrl+alt+d",
+      "command": "recording.marker",
+      "scope": "global",
+      "locked": true
+    }
+  ]
+}

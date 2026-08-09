@@ -1,0 +1,36 @@
+name: Adapter request
+description: Propose another native keybinding format.
+title: "[Adapter] "
+labels: ["adapter"]
+body:
+  - type: input
+    id: application
+    attributes:
+      label: Application or tool
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Official format documentation
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: scopes
+    attributes:
+      label: Scope and context semantics
+      description: Explain global, app, mode, profile, or context behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal synthetic fixture
+      description: Do not paste personal configuration.
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Contribution
+      options:
+        - label: I can help provide redacted fixtures or test the adapter.

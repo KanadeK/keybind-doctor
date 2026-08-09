@@ -1,0 +1,62 @@
+name: Bug report
+description: Report a reproducible parser, analysis, CLI, or browser problem.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Remove private commands, paths, account names, and tokens before attaching a config.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.1.0 or commit hash
+    validations:
+      required: true
+  - type: dropdown
+    id: entry
+    attributes:
+      label: Entry point
+      options:
+        - CLI
+        - Browser workbench
+        - Library API
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Input format
+      options:
+        - VS Code family
+        - Zed
+        - JetBrains
+        - PowerToys
+        - AutoHotkey
+        - Portable manifest
+        - Multiple formats
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the exact command and a synthetic or redacted input.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Node version, browser
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed private paths, commands, usernames, and tokens.
+          required: true

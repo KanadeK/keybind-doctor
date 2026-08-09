@@ -1,0 +1,16 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-t": "terminal_panel::ToggleFocus",
+      "ctrl-shift-p": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Editor && !read_only",
+    "bindings": {
+      "ctrl-k ctrl-c": "editor::ToggleComments",
+      "ctrl-shift-l": "editor::SelectAllMatches"
+    }
+  }
+]
